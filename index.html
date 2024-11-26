@@ -4,58 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LiPa Music Services</title>
-    <style>
-
-        body{
-            margin: 0;
-        }
-
-        .BackgroundPictureMain{
-            height: 100vh;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .MenuBar{
-            background-color: slategray;
-            height: 50pt;
-            font-size: 20pt;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin-left: 0pt;
-            align-content: center;
-        }
-
-        .MenuBarLink{
-            color: white;
-            text-decoration: none;
-            
-        }
-
-        .MenuItem{
-            border: 2px solid darkblue;
-            background-color: cornflowerblue;
-            border-radius: 5pt;
-            display: inline-block;
-            width: 120pt;
-            height: 30pt;
-            color: white;
-            text-align: center;
-            margin-left: 10pt;
-            text-decoration: none;
-            position: relative;
-            box-shadow: 5pt;
-        }
-
-    </style>
+    <link rel="stylesheet" href="Style.css"></link>
   </head>
-  <body>
-    <div class="MenuBar">
-        <a class="MenuItem" href="">HOME</a>
-        <a class="MenuItem" href="">ÜBER UNS</a>
-        <a class="MenuItem" href="">BANDS</a>
-        <a class="MenuItem" href="">EVENTS</a>
-    </div>
 
-    <img class="BackgroundPictureMain" src="/Resources/Logo Breit.png">
+  <body>
+    <div id="HeadBar"></div>
+
+    <p>
+        <video class="BackgroundVideoMain" src="Resources/Videos/Mandragora Video Halle 101.mp4" autoplay muted></video>
+    </p>
+
+    <div id="FootBar"></div>
   </body>
 </html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("video").prop('muted', true);
+
+        $("video").click( function (){
+            $(this).prop('muted', !$(this).prop('muted'));
+        });
+
+        $(".play-video").click( function (){
+            $("video").prop('muted', !$("video").prop('muted'));
+        });
+    });
+</script>
+
+<script
+
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+
+</script>
+
+<script> 
+
+    $(function(){
+        $("#HeadBar").load("FixedPages/HeadBar.html"); 
+        $("#FootBar").load("FixedPages/FootBar.html"); 
+    });
+
+</script> 
