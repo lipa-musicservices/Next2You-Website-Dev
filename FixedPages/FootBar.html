@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FootBar</title>
-</head>
-<body>
-    <div class="FootBar">
-
-    </div>
-</body>
+  </head>
+  <body>
+    <footer>
+      <div class="FootBar">
+        <table class="FooterTable" width="100%">
+          <tr>
+            <th width="10%"></th>
+            <th width="20%"><img class="FooterLogo" src="/Resources/Logo Transparent hell.png"></img></th>
+            <th width="20%"><div class="FooterText">LiPa Music Services</br>Albert-Schweitzer-Str. 65</br>67655 Kaiserslautern</div></th>
+            <th width="20%"></th>
+            <th width="20%"></th>
+            <th width="10%"></th>
+          </tr>
+          <tr>
+            <th width="10%"></th>
+            <th>
+              <div class="CopyrightNoticeFooter">
+                <p>Copyright &copy;&nbsp;</p>
+                <p id="VARCurYear"></p>
+                <p>&nbsp;- LiPa Music Services</p>
+              </div>
+            </th>
+            <th width="10%"></th>
+          </tr>
+        </table>
+      </div>
+    </footer>
+  </body>
 </html>
+
+<script>
+  document.getElementById("VARCurYear").innerHTML = new Date().getFullYear();
+</script>
