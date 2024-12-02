@@ -1,165 +1,204 @@
-        body{
-            margin: 0;
-        }
+body {
+  margin: 0;
+}
 
-        .BackgroundPictureMain{
-            height: 100vh;
-            width: 100%;
-            object-fit: cover;
-        }
+.BackgroundPictureMain {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
 
-        .BackgroundVideoMain{
-            height: 100vh;
-            width: 100%;
-            object-fit: cover;
-            margin-top: -12pt;
-        }
+.BackgroundVideoMain {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  margin-top: -12pt;
+}
 
-        .MenuBar{
-            background-color: darkslategrey;
-            height: 70pt;
-            font-size: 20pt;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin-left: 0pt;
-            align-content: center;
-        }
+.MenuBar {
+  background-color: darkslategrey;
+  height: 70pt;
+  font-size: 20pt;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-left: 0pt;
+  align-content: center;
+}
 
-        .MenuBarLink{
-            color: white;
-            text-decoration: none;
-            
-        }
+.MenuBarLink {
+  color: white;
+  text-decoration: none;
+}
 
-        .MenuBarItem{
-            display: inline-block;
-            width: 120pt;
-            height: auto;
-            color: white;
-            text-align: center;
-            margin-top: 20pt;
-            text-decoration: none;
-            position: relative;
-            vertical-align: top;
-        }
+.MenuBarItem {
+  display: inline-block;
+  width: 120pt;
+  height: auto;
+  color: white;
+  text-align: center;
+  margin-top: 20pt;
+  text-decoration: none;
+  position: relative;
+  vertical-align: top;
+}
 
-        .MenuBarItem:hover{
-            color: red;
-        }
+.MenuBarItem:hover {
+  color: red;
+}
 
-        .MenuBarLogo{
-            height: 50pt;
-            width: 50pt;
-            margin-left: 25pt;
-            margin-top: auto;
-            position: relative;
-        }
+.MenuBarLogo {
+  height: 50pt;
+  width: 50pt;
+  margin-left: 25pt;
+  margin-top: auto;
+  position: relative;
+}
 
-        .FootBar{
-            background-color: black;
-            height: 300pt;
-            font-size: 20pt;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            align-content: center;
-            object-fit: cover;
-            margin-top: -15pt;
-        }
+.FootBar {
+  background-color: black;
+  height: 300pt;
+  font-size: 20pt;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  align-content: center;
+  object-fit: cover;
+  margin-top: -15pt;
+}
 
-        .Headline1{
-            color: white;
-            background-color: rgb(4, 37, 37);
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 60pt;
-            height: 80pt;
-            text-align: center;
-        }
+.Headline1 {
+  color: white;
+  background-color: rgb(4, 37, 37);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 60pt;
+  height: 80pt;
+  text-align: center;
+}
 
-        .Headline2{
-            color: white;
-            background-color: rgb(4, 37, 37);
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 30pt;
-            height: 50pt;
-            margin-top: auto;
-            text-align: center;
-        }
+.Headline2 {
+  color: white;
+  background-color: rgb(4, 37, 37);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30pt;
+  height: 50pt;
+  margin-top: auto;
+  text-align: center;
+}
 
-        .Headline3{
-            color: white;
-            background-color: rgb(4, 37, 37);
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 20pt;
-            height: 40pt;
-            margin-top: auto;
-            text-align: center;
-        }
+.Headline3 {
+  color: white;
+  background-color: rgb(4, 37, 37);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20pt;
+  height: 40pt;
+  margin-top: auto;
+  text-align: center;
+}
 
-        .StandardText1{
-            color: white;
-            background-color: rgb(4, 37, 37);
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 15pt;
-            height: auto;
-            min-height: 100pt;
-            margin-top: auto;
-            text-align: justify;
-            line-height: 25pt;
-        }
+.StandardText1 {
+  color: white;
+  background-color: rgb(4, 37, 37);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15pt;
+  height: auto;
+  min-height: 100pt;
+  margin-top: auto;
+  text-align: justify;
+  line-height: 25pt;
+}
 
-        .PageBackground{
-            background-color: rgb(4, 37, 37);
-        }
+.PageBackground {
+  background-color: rgb(4, 37, 37);
+}
 
-        .Spacer10{
-            background-color: rgb(4, 37, 37);
-            height: 20pt;
-        }
+.Spacer10 {
+  background-color: rgb(4, 37, 37);
+  height: 20pt;
+}
 
-        .FooterText1{
-            color: white;
-            background-color: black;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 12pt;
-            height: auto;
-            min-height: 100pt;
-            margin-top: auto;
-            text-align: center; 
-            vertical-align: middle;
-        }
+.FooterText1 {
+  color: white;
+  background-color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 12pt;
+  height: auto;
+  min-height: 100pt;
+  margin-top: auto;
+  text-align: center;
+  vertical-align: middle;
+}
 
-        .FooterTable{
-            color: white;
-            background-color: black;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 12pt;
-            height: auto;
-            min-height: 100pt;
-            align-items: center;
-        }
+.FooterTable {
+  color: white;
+  background-color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 12pt;
+  height: auto;
+  min-height: 100pt;
+  align-items: center;
+}
 
-        th{
-            text-align: center;
-        }
+th {
+  text-align: center;
+}
 
-        .PageSides{
-            width: 200pt;
-        }
+.PageSides {
+  width: 10%;
+}
 
-        .CopyrightNoticeFooter{
-            display: inline-flex; 
-            justify-content: space-between;
-            vertical-align: bottom;
-        }
+.CopyrightNoticeFooter {
+  display: inline-flex;
+  justify-content: space-between;
+  vertical-align: bottom;
+}
 
-        .FooterLogo{
-            width: 100pt;
-        }
+.FooterLogo {
+  width: 100pt;
+}
 
-        .FooterText{
-            color: white;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 12pt;
-            height: auto;
-            min-height: 100pt;
-            align-items: center;
-            text-align: start;
-        }
+.FooterText {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 12pt;
+  height: auto;
+  min-height: 100pt;
+  align-items: center;
+  text-align: start;
+}
+
+.TextOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(4, 37, 37);
+  }
+  
+  .PersonalPictureContainer:hover .TextOverlay {
+    opacity: 66%;
+  }
+
+  .PersonalPictureContainer{
+    position: relative;
+    width: 100%;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+  }
+
+  .PersonalPictureOverlayText{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+    margin: 20pt;
+    color: white;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 15pt;
+    height: auto;
+    min-height: 100pt;
+    margin-top: auto;
+    line-height: 25pt;
+  }
