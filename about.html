@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LiPa Music Services</title>
+    <title>LiPa - About</title>
     <link rel="stylesheet" href="Style.css"></link>
   </head>
 
@@ -17,32 +17,38 @@
       <table>
         <tr>
           <th class="PageSides"></th>
-          <th width=auto height="300pt"><div class="StandardText1">Die LiPa Music Services GbR ist eine vielseitige Bandmanagement-Agentur, die eine breite Palette an Dienstleistungen für Musiker und Bands bietet. Von Booking und Design-Services über umfassendes Bandmanagement bis hin zur Verwaltung von Notenmaterial – LiPa Music Services GbR unterstützt Künstler in allen organisatorischen Belangen. Darüber hinaus bietet das Unternehmen Auftragsarrangements und -kompositionen an, um individuelle musikalische Wünsche professionell umzusetzen.</div></th>
+          <th width=auto height="300pt"><div id="AboutGeneralText" class="StandardText1"></div></th>
           <th class="PageSides"></th>
         </tr>
       </table>
       <div class="Spacer10"></div>
       <div class="Headline2">Das Team:</div>
 
-      <table width="100%">
+      <table width="100%" height="650pt">
         <tr>
-          <th width="10%" class="PageSides"></th>
-          <th width="40%"><div class="Headline3">Paul Dupont<div></th>
-          <th width="40%"><div class="Headline3">Lisa Römer<div></th>
-          <th width="10%" class="PageSides"></th>
+          <th width="40%" class="PageSides"></th>
+          <th width="10%"><div class="AboutHeadline3-1">Paul Dupont<div></th>
+          <th width="10%"><div class="AboutHeadline3-2">Lisa Römer<div></th>
+          <th width="40%" class="PageSides"></th>
         </tr>
         <tr>
           <th class="PageSides"></th>
           <th>
-            <div class="PersonalPictureContainer">
-              <img class="PersonalPicture" height="600pt" src="Resources/PersonalPictures/Bewerbung.jpg">
-              <div class="TextOverlay" >
-                <div class="PersonalPictureOverlayText">Hello World</div>
+            <div class="PersonalPictureContainer1" height="500pt">
+              <img id="PersonalPicture1" height="500pt" src="Resources/PersonalPictures/PersonalPictures1.PNG">
+              <div class="TextOverlay">
+                <div class="PersonalPictureOverlayText" id="PersonalPictures1"></div>
               </div>
             </div>
           </th>
-
-          <th><img height="600pt" src="Resources/PersonalPictures/Bewerbung.jpg"><div></th>
+          <th>
+            <div class="PersonalPictureContainer2" height="500pt">
+              <img id="PersonalPicture2" height="500pt" src="Resources/PersonalPictures/PersonalPictures2.PNG">
+              <div class="TextOverlay">
+                <div class="PersonalPictureOverlayText" id="PersonalPictures2"></div>
+              </div>
+            </div>
+          </th>
           <th class="PageSides"></th>
         </tr>
       </table>
@@ -62,11 +68,145 @@
 
 </script>
 
-<script> 
-
+<script>
     $(function(){
         $("#HeadBar").load("FixedPages/HeadBar.html"); 
         $("#FootBar").load("FixedPages/FootBar.html"); 
     });
+
+    document.querySelector('.PersonalPictureContainer1').addEventListener('mouseover', function () {
+    const textElement = document.querySelector('.AboutHeadline3-2');
+
+    let opacity = 1; // Startwert der Opazität
+    const duration = 100; // Dauer in Millisekunden
+    const interval = 50; // Intervall für die Schritte in Millisekunden
+    const decrement = interval / duration; // Schrittweise Verringerung
+
+    const fade = setInterval(() => {
+        opacity -= decrement; // Reduzieren der Opazität
+        if (opacity <= 0) {
+            clearInterval(fade); // Stoppen, wenn Opazität 0 erreicht
+            opacity = 0; // Sicherheitshalber auf 0 setzen
+        }
+        textElement.style.opacity = opacity; // Anwenden der neuen Opazität
+    }, interval);
+});
+
+document.querySelector('.PersonalPictureContainer1').addEventListener('mouseout', function () {
+    const textElement = document.querySelector('.AboutHeadline3-2');
+    textElement.textContent = "Lisa Römer"; // Text zurücksetzen
+
+    let opacity = 0; // Startwert der Opazität
+    const duration = 100; // Dauer in Millisekunden
+    const interval = 50; // Intervall für die Schritte in Millisekunden
+    const decrement = interval / duration; // Schrittweise Verringerung
+
+    const fade = setInterval(() => {
+        opacity += decrement; // Reduzieren der Opazität
+        if (opacity >= 1) {
+            clearInterval(fade); // Stoppen, wenn Opazität 0 erreicht
+            opacity = 1; // Sicherheitshalber auf 0 setzen
+        }
+        textElement.style.opacity = opacity; // Anwenden der neuen Opazität
+    }, interval);
+});
+
+document.querySelector('.PersonalPictureContainer2').addEventListener('mouseover', function () {
+    const textElement = document.querySelector('.AboutHeadline3-1');
+
+    let opacity = 1; // Startwert der Opazität
+    const duration = 200; // Dauer in Millisekunden
+    const interval = 50; // Intervall für die Schritte in Millisekunden
+    const decrement = interval / duration; // Schrittweise Verringerung
+
+    const fade = setInterval(() => {
+        opacity -= decrement; // Reduzieren der Opazität
+        if (opacity <= 0) {
+            clearInterval(fade); // Stoppen, wenn Opazität 0 erreicht
+            opacity = 0; // Sicherheitshalber auf 0 setzen
+        }
+        textElement.style.opacity = opacity; // Anwenden der neuen Opazität
+    }, interval);
+});
+
+document.querySelector('.PersonalPictureContainer2').addEventListener('mouseout', function () {
+    const textElement = document.querySelector('.AboutHeadline3-1');
+    textElement.textContent = "Paul Dupont"; // Text zurücksetzen
+
+    let opacity = 0; // Startwert der Opazität
+    const duration = 200; // Dauer in Millisekunden
+    const interval = 50; // Intervall für die Schritte in Millisekunden
+    const decrement = interval / duration; // Schrittweise Verringerung
+
+    const fade = setInterval(() => {
+        opacity += decrement; // Reduzieren der Opazität
+        if (opacity >= 1) {
+            clearInterval(fade); // Stoppen, wenn Opazität 0 erreicht
+            opacity = 1; // Sicherheitshalber auf 0 setzen
+        }
+        textElement.style.opacity = opacity; // Anwenden der neuen Opazität
+    }, interval);
+});
+
+document.querySelector('.PersonalPictureContainer2').addEventListener('mouseover', function () {
+    document.querySelector('.PersonalPictureContainer1 .TextOverlay').style.opacity = '1'; // Overlay von Container 1 anzeigen
+  });
+
+  document.querySelector('.PersonalPictureContainer2').addEventListener('mouseout', function () {
+    document.querySelector('.PersonalPictureContainer1 .TextOverlay').style.opacity = '0'; // Overlay von Container 1 ausblenden
+  });
+
+  document.querySelector('.PersonalPictureContainer1').addEventListener('mouseover', function () {
+    document.querySelector('.PersonalPictureContainer2 .TextOverlay').style.opacity = '1'; // Overlay von Container 1 anzeigen
+  });
+
+  document.querySelector('.PersonalPictureContainer1').addEventListener('mouseout', function () {
+    document.querySelector('.PersonalPictureContainer2 .TextOverlay').style.opacity = '0'; // Overlay von Container 1 ausblenden
+  });
+
+    var txtFile1 = new XMLHttpRequest();
+    var allText1 = "";
+
+    txtFile1.onreadystatechange = function () {
+        if (txtFile1.readyState === XMLHttpRequest.DONE && txtFile1.status == 200) {
+          allText1 = txtFile1.responseText;
+          allText1 = allText1.split("\n").join("<br>");
+        }
+
+        document.getElementById('AboutGeneralText').innerHTML = allText1;
+    }
+    
+    txtFile1.open("GET", "Texts/AboutGeneral.txt", true);
+    txtFile1.send(null);
+
+    var txtFile2 = new XMLHttpRequest();
+    var allText2 ="EFJ";
+    
+    txtFile2.onreadystatechange = function () {
+        if (txtFile2.readyState === XMLHttpRequest.DONE && txtFile2.status == 200) {
+          allText2 = txtFile2.responseText;
+          allText2 = allText2.split("\n").join("<br>");
+        }
+
+        document.getElementById('PersonalPictures1').innerHTML = allText2;
+    }
+    
+    txtFile2.open("GET", "Texts/AboutLisa.txt", true);
+    txtFile2.send(null);
+
+    var txtFile3 = new XMLHttpRequest();
+    var allText3 ="EFJ";
+    
+    txtFile3.onreadystatechange = function () {
+        if (txtFile3.readyState === XMLHttpRequest.DONE && txtFile3.status == 200) {
+          allText3 = txtFile3.responseText;
+          allText3 = allText3.split("\n").join("<br>");
+        }
+
+        document.getElementById('PersonalPictures2').innerHTML = allText3;
+    }
+    
+    txtFile3.open("GET", "Texts/AboutPaul.txt", true);
+    txtFile3.send(null);
 
 </script> 
