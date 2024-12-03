@@ -127,16 +127,46 @@ body {
   line-height: 25pt;
 }
 
-.BandText{
+.BandText1{
   color: white;
   background-color: rgb(4, 37, 37);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 15pt;
+  font-size: 13pt;
   height: auto;
-  min-height: 100pt;
+  height: 250pt;
   margin-top: 0;
   text-align: center;
   line-height: 25pt;
+  text-align: justify;
+  margin-left: 10pt;
+  margin-right: 20pt;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.BandTextHeadline1{
+  color: white;
+  background-color: rgb(4, 37, 37);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 50pt;
+  /* height: 70pt; */
+  vertical-align: text-top;
+  align-content: start;
+  text-align: start;
+  margin-left: 5pt;
+}
+
+.BandTextHeadline2{
+  color: white;
+  background-color: rgb(4, 37, 37);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 50pt;
+  /* height: 70pt; */
+  vertical-align: text-top;
+  align-content: start;
+  text-align: end;
+  margin-right: 5pt;
 }
 
 .PageBackground {
@@ -239,4 +269,13 @@ th {
     min-height: 100pt;
     margin-top: auto;
     line-height: 17pt;
+  }
+
+  .BandTableText{
+    align-content: start;
+    margin-top: 0;
+  }
+
+  .BandTableImg{
+    align-content: center;
   }
