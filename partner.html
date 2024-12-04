@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiPa - Partner</title>
+    <link rel="stylesheet" href="Style.css"></link>
+  </head>
+
+  <body>
+    <div id="HeadBar"></div>
+    <div class="Spacer10"></div>
+    <div class="Headline1">PARTNER</div>
+    <div class="Headline2">Firmen, mit denen wir zusammenarbeiten</div>
+
+    <div class="PageBackground">
+      <table width="100%">
+        <tr>
+          <th width="10%" class="PageSides"></th>
+          <th width="80%" class="StandardText1">Wir bei LiPa Music Services setzen alles daran, für unsere Bands das bestmögliche Angebot zu schaffen, das sowohl in puncto Preis-Leistungs-Verhältnis als auch in Qualität überzeugt. 
+            Dabei legen wir großen Wert auf eine individuelle Betreuung und eine enge Zusammenarbeit. Um dies zu gewährleisten, arbeiten wir mit sorgfältig ausgewählten Partnerfirmen zusammen, die unsere Werte teilen. 
+            Gemeinsam mit unseren Partnern beraten wir unsere Bands umfassend, sei es in den Bereichen Technik, Design, Management oder Organisation, um maßgeschneiderte Lösungen und optimale Bedingungen für jedes Projekt zu bieten. 
+            Unser Ziel: Erfolgsgeschichten schreiben – gemeinsam mit unseren Künstlern!</th>
+          <th width="10%" class="PageSides"></th>
+        </tr>
+      </table>
+      <div class="Spacer10"></div>
+      <table width="100%">
+        <tr>
+          <th width="20%" class="PageSides"></th>
+          <th width="20%" class="PartnerLogo" id="PartnerLogo1"><img class="PartnerImg" width="80%" src="Resources/PartnerPictures/Zahnarzt Dupont Logo.png"></th>
+          <th width="20%" class="PartnerLogo"><img class="PartnerImg" width="80%" src="Resources/PartnerPictures/Zahnarzt Dupont Logo.png"></th>
+          <th width="20%" class="PartnerText" id="PartnerText" rowspan="3"></th>
+          <th width="20%" class="PageSides"></th>
+        </tr>
+        <tr>
+          <th width="20%" class="PageSides"></th>
+          <th width="20%" class="PartnerLogo"><img class="PartnerImg" width="80%" src="Resources/PartnerPictures/Zahnarzt Dupont Logo.png"></th>
+          <th width="20%" class="PartnerLogo"><img class="PartnerImg" width="80%" src="Resources/PartnerPictures/Zahnarzt Dupont Logo.png"></th>
+          <th width="20%" class="PageSides"></th>
+        </tr>
+        <tr>
+          <th width="20%" class="PageSides"></th>
+          <th width="20%" class="PartnerLogo"><img class="PartnerImg" width="80%" src="Resources/PartnerPictures/Zahnarzt Dupont Logo.png"></th>
+          <th width="20%" class="PartnerLogo"><img class="PartnerImg" width="80%" src="Resources/PartnerPictures/Zahnarzt Dupont Logo.png"></th>
+          <th width="20%" class="PageSides"></th>
+        </tr>
+      </table>
+      <div class="Spacer10"></div>
+      <div class="Spacer10"></div>
+      <div class="Spacer10"></div>
+    </div>
+
+    <div id="FootBar"></div>
+  </body>
+
+</html>
+
+<script
+
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+
+</script>
+
+<script>
+
+    $(function(){
+        $("#HeadBar").load("FixedPages/HeadBar.html"); 
+        $("#FootBar").load("FixedPages/FootBar.html"); 
+    });
+
+// Elemente auswählen
+const hoverDiv = document.getElementById("PartnerImg");
+const textDiv = document.getElementById("PartnerText");
+
+
+
+document.getElementById("PartnerLogo1").addEventListener('mouseover', function () {
+  document.getElementById('PartnerText').innerHTML = "keufhwiuke!";
+});
+
+document.getElementById("PartnerLogo1").addEventListener('mouseout', function () {
+  document.getElementById('PartnerText').innerHTML = "rgd!";
+});
+
+</script> 

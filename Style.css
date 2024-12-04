@@ -279,3 +279,19 @@ th {
   .BandTableImg{
     align-content: center;
   }
+
+  .PartnerImg{
+    border-radius: 5pt;
+  }
+
+  .PartnerText{
+    color: white;
+    background-color: rgb(4, 37, 37);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 15pt;
+    height: auto;
+    min-height: 100pt;
+    margin-top: auto;
+    text-align: justify;
+    line-height: 25pt;
+  }

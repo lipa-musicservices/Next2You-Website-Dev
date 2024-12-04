@@ -3,56 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LiPa - About</title>
+    <title>LiPa - Events</title>
     <link rel="stylesheet" href="Style.css"></link>
   </head>
 
   <body>
     <div id="HeadBar"></div>
     <div class="Spacer10"></div>
-    <div class="Headline1">ÜBER UNS</div>
-    <div class="Headline2">Wir sind LiPa Music Services!</div>
+    <div class="Headline1">EVENTS</div>
+    <div class="Headline2">Die Events unserer Partner-Bands</div>
 
     <div class="PageBackground">
-      <table>
-        <tr>
-          <th class="PageSides"></th>
-          <th width=auto height="300pt"><div id="AboutGeneralText" class="StandardText1"></div></th>
-          <th class="PageSides"></th>
+      <table width="100%">
+        <tr height="500pt">
+          <th width="10%" class="PageSides"></th>
+          <th><iframe height="600pt" class="CalendarClass" width="80%" src="https://calendar.google.com/calendar/embed?src=76d0abec493ca1f4a553cc144d09b6a0c8157468351b3de837a58579e8aaa5a8%40group.calendar.google.com&ctz=Europe%2FBerlin"></iframe></th>
+          <th width="10%" class="PageSides"></th>
         </tr>
       </table>
+      
       <div class="Spacer10"></div>
-      <div class="Headline2">Das Team:</div>
-
-      <table width="100%" height="650pt">
-        <tr>
-          <th width="40%" class="PageSides"></th>
-          <th width="10%"><div class="AboutHeadline3-1">Paul Dupont<div></th>
-          <th width="10%"><div class="AboutHeadline3-2">Lisa Römer<div></th>
-          <th width="40%" class="PageSides"></th>
-        </tr>
-        <tr>
-          <th class="PageSides"></th>
-          <th>
-            <div class="PersonalPictureContainer1" height="500pt">
-              <img id="PersonalPicture1" height="500pt" src="Resources/PersonalPictures/PersonalPictures1.PNG">
-              <div class="TextOverlay">
-                <div class="PersonalPictureOverlayText" id="PersonalPictures1"></div>
-              </div>
-            </div>
-          </th>
-          <th>
-            <div class="PersonalPictureContainer2" height="500pt">
-              <img id="PersonalPicture2" height="500pt" src="Resources/PersonalPictures/PersonalPictures2.PNG">
-              <div class="TextOverlay">
-                <div class="PersonalPictureOverlayText" id="PersonalPictures2"></div>
-              </div>
-            </div>
-          </th>
-          <th class="PageSides"></th>
-        </tr>
-      </table>
-
+      <div class="Spacer10"></div>      
+      <div class="Spacer10"></div>
+      <div class="Spacer10"></div>      
+      <div class="Spacer10"></div>
+      <div class="Spacer10"></div>
     </div>
 
     <div id="FootBar"></div>
@@ -178,35 +153,5 @@ document.querySelector('.PersonalPictureContainer2').addEventListener('mouseover
     
     txtFile1.open("GET", "Texts/AboutGeneral.txt", true);
     txtFile1.send(null);
-
-    var txtFile2 = new XMLHttpRequest();
-    var allText2 ="EFJ";
-    
-    txtFile2.onreadystatechange = function () {
-        if (txtFile2.readyState === XMLHttpRequest.DONE && txtFile2.status == 200) {
-          allText2 = txtFile2.responseText;
-          allText2 = allText2.split("\n").join("<br>");
-        }
-
-        document.getElementById('PersonalPictures1').innerHTML = allText2;
-    }
-    
-    txtFile2.open("GET", "Texts/AboutLisa.txt", true);
-    txtFile2.send(null);
-
-    var txtFile3 = new XMLHttpRequest();
-    var allText3 ="EFJ";
-    
-    txtFile3.onreadystatechange = function () {
-        if (txtFile3.readyState === XMLHttpRequest.DONE && txtFile3.status == 200) {
-          allText3 = txtFile3.responseText;
-          allText3 = allText3.split("\n").join("<br>");
-        }
-
-        document.getElementById('PersonalPictures2').innerHTML = allText3;
-    }
-    
-    txtFile3.open("GET", "Texts/AboutPaul.txt", true);
-    txtFile3.send(null);
 
 </script> 
