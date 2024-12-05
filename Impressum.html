@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiPa - Bands</title>
+    <link rel="stylesheet" href="Style.css"></link>
+  </head>
+
+  <body>
+    <div id="HeadBar"></div>
+    <div class="Spacer10"></div>
+    <div class="Headline1">IMPRESSUM</div>
+
+    <div class="PageBackground">
+      <table width="100%">
+        <tr>
+          <th class="PageSides" width="10%"></th>
+          <th>
+            <div class="StandardText1" id="ImpressumText"></div>
+          </th>
+          <th class="PageSides" width="10%"></th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="Spacer10"></div>
+    <div class="Spacer10"></div>
+    <div id="FootBar"></div>
+  </body>
+
+</html>
+
+<script
+
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+
+</script>
+
+<script>
+  $(function(){
+        $("#HeadBar").load("FixedPages/HeadBar.html"); 
+        $("#FootBar").load("FixedPages/FootBar.html"); 
+    });
+
+    var txtFile1 = new XMLHttpRequest();
+    var allText1 = "";
+
+    txtFile1.onreadystatechange = function () {
+        if (txtFile1.readyState === XMLHttpRequest.DONE && txtFile1.status == 200) {
+          allText1 = txtFile1.responseText;
+          allText1 = allText1.split("\n").join("<br>");
+        }
+
+        document.getElementById('ImpressumText').innerHTML = allText1;
+    }
+    
+    txtFile1.open("GET", "Texts/ImpressumText.txt", true);
+    txtFile1.send(null);
+
+</script> 
