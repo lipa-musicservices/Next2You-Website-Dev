@@ -25,17 +25,16 @@
       <div class="Spacer10"></div>
       <div class="Headline2">Das Team:</div>
 
-      <table width="100%">
+      <table border="1px">
         <tr>
           <th width="40%" class="PageSides"></th>
           <th width="10%"><div class="AboutHeadline3-1">Paul Dupont<div></th>
           <th width="10%"><div class="AboutHeadline3-2">Lisa Römer<div></th>
           <th width="40%" class="PageSides"></th>
         </tr>
-
         <tr>
-          <th width="10%" class="PageSides"></th>
-          <th width="40%">
+          <th class="PageSides"></th>
+          <td class="AboutTD" width="30%">
             <div class="Spacer10"></div>
             <div class="PersonalPictureContainer1" width="90%">
               <img id="PersonalPicture1" width="40%" src="Resources/PersonalPictures/PersonalPictures1.PNG">
@@ -43,17 +42,17 @@
                 <div class="PersonalPictureOverlayText" id="PersonalPictures1"></div>
               </div>
             </div>
-          </th>
-          <th width="40%">
+          </td>
+          <td class="AboutTD" width="30%">
             <div class="Spacer10"></div>
             <div class="PersonalPictureContainer2" width="90%">
-              <img id="PersonalPicture2" width="40%" src="Resources/PersonalPictures/PersonalPictures2.PNG">
               <div class="TextOverlay">
                 <div class="PersonalPictureOverlayText" id="PersonalPictures2"></div>
               </div>
+              <img id="PersonalPicture2" class="PersonalPicture" width="40%" src="Resources/PersonalPictures/PersonalPictures2.PNG">
             </div>
-          </th>
-          <th width="10%" class="PageSides"></th>
+          </td>
+          <th width="20%" class="PageSides"></th>
         </tr>
       </table>
 
@@ -74,11 +73,19 @@
 </script>
 
 <script>
+  var divHeight = document.getElementById('PersonalPictures1').offsetHeight;
+</script>
+
+<script> 
+
     $(function(){
         $("#HeadBar").load("FixedPages/HeadBar.html"); 
         $("#FootBar").load("FixedPages/FootBar.html"); 
     });
 
+</script> 
+
+  <script>
     document.querySelector('.PersonalPictureContainer1').addEventListener('mouseover', function () {
     const textElement = document.querySelector('.AboutHeadline3-2');
 
