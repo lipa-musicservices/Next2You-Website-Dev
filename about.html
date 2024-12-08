@@ -24,38 +24,39 @@
       </table>
       <div class="Spacer10"></div>
       <div class="Headline2">Das Team:</div>
-
-      <table border="1px">
-        <tr>
-          <th width="40%" class="PageSides"></th>
-          <th width="10%"><div class="AboutHeadline3-1">Paul Dupont<div></th>
-          <th width="10%"><div class="AboutHeadline3-2">Lisa Römer<div></th>
-          <th width="40%" class="PageSides"></th>
-        </tr>
-        <tr>
-          <th class="PageSides"></th>
-          <td class="AboutTD" width="30%">
-            <div class="Spacer10"></div>
-            <div class="PersonalPictureContainer1" width="90%">
-              <img id="PersonalPicture1" width="40%" src="Resources/PersonalPictures/PersonalPictures1.PNG">
-              <div class="TextOverlay">
-                <div class="PersonalPictureOverlayText" id="PersonalPictures1"></div>
+      <div class="AboutTableDiv">
+        <table>
+          <tr>
+            <td width="auto" class="PageSides"></td>
+            <td width="10%"><div class="AboutHeadline3-1">Paul Dupont</div></td>
+            <td width="10%"><div class="AboutHeadline3-2">Lisa Römer</div></td>
+            <td width="auto" class="PageSides"></td>
+          </tr>
+          <tr width="100%">
+            <td width="auto" class="PageSides"></td>
+            <td width="20%" class="AboutTD">
+              <div class="PersonalPictureContainer1">
+                <img id="PersonalPicture1" width="100%" class="PersonalPicture" src="Resources/PersonalPictures/PersonalPictures1.PNG">
+                <div class="TextOverlay">
+                  <div class="PersonalPictureOverlayText" id="PersonalPictures1"></div>
+                </div>
               </div>
-            </div>
-          </td>
-          <td class="AboutTD" width="30%">
-            <div class="Spacer10"></div>
-            <div class="PersonalPictureContainer2" width="90%">
-              <div class="TextOverlay">
-                <div class="PersonalPictureOverlayText" id="PersonalPictures2"></div>
+            </td>
+            <td width="20%" class="AboutTD">
+              <div class="PersonalPictureContainer2">
+                <img id="PersonalPicture2" width="100%" class="PersonalPicture" src="Resources/PersonalPictures/PersonalPictures2.PNG">
+                <div class="TextOverlay">
+                  <div class="PersonalPictureOverlayText" id="PersonalPictures2"></div>
+                </div>
               </div>
-              <img id="PersonalPicture2" class="PersonalPicture" width="40%" src="Resources/PersonalPictures/PersonalPictures2.PNG">
-            </div>
-          </td>
-          <th width="20%" class="PageSides"></th>
-        </tr>
-      </table>
+            </td>
+            <td width="auto" class="PageSides"></td>
+          </tr>
+        </table>
+      </div>
+      
 
+      <div class="Spacer10"></div>
       <div class="Spacer10"></div>
     </div>
 
@@ -88,6 +89,7 @@
   <script>
     document.querySelector('.PersonalPictureContainer1').addEventListener('mouseover', function () {
     const textElement = document.querySelector('.AboutHeadline3-2');
+    const ImgElement = document.getElementById('PersonalPicture2');
 
     let opacity = 1; // Startwert der Opazität
     const duration = 100; // Dauer in Millisekunden
@@ -101,11 +103,14 @@
             opacity = 0; // Sicherheitshalber auf 0 setzen
         }
         textElement.style.opacity = opacity; // Anwenden der neuen Opazität
+        ImgElement.style.opacity = opacity;
     }, interval);
 });
 
 document.querySelector('.PersonalPictureContainer1').addEventListener('mouseout', function () {
     const textElement = document.querySelector('.AboutHeadline3-2');
+    const ImgElement = document.getElementById('PersonalPicture2');
+
     textElement.textContent = "Lisa Römer"; // Text zurücksetzen
 
     let opacity = 0; // Startwert der Opazität
@@ -120,11 +125,13 @@ document.querySelector('.PersonalPictureContainer1').addEventListener('mouseout'
             opacity = 1; // Sicherheitshalber auf 0 setzen
         }
         textElement.style.opacity = opacity; // Anwenden der neuen Opazität
+        ImgElement.style.opacity = opacity;
     }, interval);
 });
 
 document.querySelector('.PersonalPictureContainer2').addEventListener('mouseover', function () {
     const textElement = document.querySelector('.AboutHeadline3-1');
+    const ImgElement = document.getElementById('PersonalPicture1');
 
     let opacity = 1; // Startwert der Opazität
     const duration = 200; // Dauer in Millisekunden
@@ -138,11 +145,13 @@ document.querySelector('.PersonalPictureContainer2').addEventListener('mouseover
             opacity = 0; // Sicherheitshalber auf 0 setzen
         }
         textElement.style.opacity = opacity; // Anwenden der neuen Opazität
+        ImgElement.style.opacity = opacity;
     }, interval);
 });
 
 document.querySelector('.PersonalPictureContainer2').addEventListener('mouseout', function () {
     const textElement = document.querySelector('.AboutHeadline3-1');
+    const ImgElement = document.getElementById('PersonalPicture1');
     textElement.textContent = "Paul Dupont"; // Text zurücksetzen
 
     let opacity = 0; // Startwert der Opazität
@@ -157,6 +166,7 @@ document.querySelector('.PersonalPictureContainer2').addEventListener('mouseout'
             opacity = 1; // Sicherheitshalber auf 0 setzen
         }
         textElement.style.opacity = opacity; // Anwenden der neuen Opazität
+        ImgElement.style.opacity = opacity;
     }, interval);
 });
 
