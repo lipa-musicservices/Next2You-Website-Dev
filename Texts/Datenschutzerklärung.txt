@@ -1,0 +1,103 @@
+DATENSCHUTZERKLÄRUNG
+
+Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst und behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung. Im Folgenden informieren wir Sie über die Verarbeitung Ihrer personenbezogenen Daten sowie Ihre Rechte im Zusammenhang mit der Nutzung unserer Website und unserer Dienste.
+
+
+1. Verantwortlicher für die Datenverarbeitung
+
+Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten ist:
+LiPa Music Services GbR
+Paul Dupont
+E-Mail: lipa.musicservices@gmail.com
+
+Bei Fragen zur Verarbeitung Ihrer Daten oder zur Wahrnehmung Ihrer Rechte wenden Sie sich bitte direkt an uns.
+
+
+2. Allgemeine Hinweise zur Datenverarbeitung
+
+Wir erheben und verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung einer funktionsfähigen Website, unserer Inhalte und Dienstleistungen erforderlich ist. Die Verarbeitung personenbezogener Daten erfolgt regelmäßig nur nach Einwilligung der betroffenen Person oder wenn die Verarbeitung durch gesetzliche Vorschriften gestattet ist.
+
+
+3. Hosting der Website
+
+Unsere Website wird über GitHub Pages gehostet. GitHub Pages kann technische Daten wie Ihre IP-Adresse, Zeitpunkte des Zugriffs und verwendete Browsertypen verarbeiten. Diese Daten werden automatisch erfasst und in Logfiles gespeichert, um den Betrieb der Website zu gewährleisten. Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub.
+
+
+4. Nutzung des Kontaktformulars (Gratis-Kontaktformular.de)
+
+Wir nutzen den Dienst von Gratis-Kontaktformular.de, um Ihnen die Möglichkeit zu bieten, direkt über unsere Website Kontakt aufzunehmen. Bei der Nutzung des Kontaktformulars verarbeiten wir folgende Daten:
+
+Ihren Namen (Pflichtfeld)
+Ihre E-Mail-Adresse (Pflichtfeld)
+Ihre Telefonnummer (optional)
+Ihre Nachricht (Pflichtfeld)
+Diese Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben, sofern dies nicht zur Erfüllung Ihrer Anfrage erforderlich ist. Weitere Informationen finden Sie in der Datenschutzerklärung von Gratis-Kontaktformular.de.
+
+
+5. Kommunikation über Google Meet und WhatsApp Business
+
+a) Google Meet
+Wir nutzen Google Meet für Videokonferenzen. Anbieter: Google Ireland Limited. Dabei können folgende Daten verarbeitet werden:
+
+Ihr Name
+Ihre E-Mail-Adresse
+Audio- und Videodaten
+Diese Daten werden zur Durchführung der Videokonferenz verarbeitet. Weitere Informationen zur Datenverarbeitung finden Sie in der Datenschutzerklärung von Google.
+
+b) WhatsApp Business
+Für die Kommunikation verwenden wir WhatsApp Business. Anbieter: WhatsApp Ireland Limited. Bei der Nutzung von WhatsApp können folgende Daten verarbeitet werden:
+
+Ihre Telefonnummer
+Inhalt Ihrer Nachrichten
+Metadaten (z. B. Zeitstempel und Geräteinformationen)
+Bitte beachten Sie, dass WhatsApp möglicherweise Daten an Server in Drittländern (außerhalb der EU) übermittelt. Weitere Informationen finden Sie in der Datenschutzerklärung von WhatsApp.
+
+
+6. Soziale Medien
+
+Wir sind auf verschiedenen sozialen Plattformen präsent, um mit Ihnen zu kommunizieren und Informationen bereitzustellen. Diese Plattformen erheben und verarbeiten Daten entsprechend ihrer eigenen Datenschutzrichtlinien:
+
+Instagram: Datenschutzerklärung
+Facebook: Datenschutzerklärung
+LinkedIn: Datenschutzerklärung
+Bei Interaktionen mit uns auf diesen Plattformen (z. B. Kommentare, Nachrichten) verarbeiten sowohl wir als auch die Anbieter Ihre personenbezogenen Daten.
+
+
+7. Rechtsgrundlagen der Datenverarbeitung
+
+Die Verarbeitung Ihrer personenbezogenen Daten erfolgt auf Grundlage folgender Rechtsgrundlagen:
+
+Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)
+Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)
+Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung)
+Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)
+8. Weitergabe von Daten an Dritte
+
+Ihre personenbezogenen Daten werden nur dann an Dritte weitergegeben, wenn dies zur Vertragserfüllung erforderlich ist, Sie ausdrücklich eingewilligt haben oder eine gesetzliche Verpflichtung besteht. Beispiele:
+
+Zahlungsdienstleister zur Abwicklung von Zahlungen
+Hosting-Anbieter für den Betrieb der Website
+
+
+9. Ihre Rechte
+
+Sie haben folgende Rechte hinsichtlich der Verarbeitung Ihrer personenbezogenen Daten:
+
+Recht auf Auskunft: Sie können Auskunft über die von uns gespeicherten personenbezogenen Daten verlangen.
+Recht auf Berichtigung: Sie können die Berichtigung unrichtiger Daten verlangen.
+Recht auf Löschung: Sie können die Löschung Ihrer Daten verlangen, soweit keine gesetzlichen Aufbewahrungspflichten bestehen.
+Recht auf Einschränkung der Verarbeitung: Sie können die Einschränkung der Verarbeitung Ihrer Daten verlangen.
+Recht auf Datenübertragbarkeit: Sie haben das Recht, die Sie betreffenden Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.
+Recht auf Widerspruch: Sie können der Verarbeitung Ihrer Daten widersprechen, wenn sich diese auf ein berechtigtes Interesse stützt.
+Recht auf Widerruf der Einwilligung: Sie können Ihre Einwilligung zur Datenverarbeitung jederzeit widerrufen.
+Zur Wahrnehmung Ihrer Rechte wenden Sie sich bitte an: lipa.musicservices@gmail.com.
+
+
+10. Datensicherheit
+
+Wir setzen technische und organisatorische Maßnahmen ein, um Ihre Daten vor unberechtigtem Zugriff, Verlust oder Manipulation zu schützen. Diese Sicherheitsmaßnahmen werden regelmäßig überprüft und an den Stand der Technik angepasst.
+
+
+11. Änderungen der Datenschutzerklärung
+
+Wir behalten uns vor, diese Datenschutzerklärung bei Änderungen der Rechtslage oder unserer Dienstleistungen anzupassen. Die jeweils aktuelle Version finden Sie auf unserer Website.
