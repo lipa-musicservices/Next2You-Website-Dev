@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiPa - Interner Bereich</title>
+    <link rel="stylesheet" href="Style.css"></link>
+  </head>
+
+  <body width="100%">
+    <div id="HeadBar"></div>
+    <div class="Spacer10"></div>
+    <div class="Headline1">Interner Bereich</div>
+    <div class="Headline2">Dokumente</div>
+
+    <div class="PageBackground" width="100%">
+        <table width="100%" id="LoginFrame">
+            <tr width="100%">
+                <th width="30%"></th>
+                <th width="40%">
+                    <div class="Spacer10"></div>
+                    <div class="Headline3">E-Mail</div>
+                    <input type="text" class="StandardInput1" width="100%" id="MailTxtBox"/>
+                    <div class="Spacer10"></div>
+                    <div class="Spacer10"></div>
+                    <div class="Headline3">Passwort</div>
+                    <input type="password" class="StandardInput1" width="100%" id="PasswordTxtBox"/>
+                    <div class="Spacer10"></div>
+                    <div id="resultBox"></div>
+                    <button onclick="LoginClick()">Log in</button>
+                </th>
+                <th width="30%"></th>
+            </tr>
+        </table>
+
+        <table width="100%" id="DataFrame" style="display: none">
+            <tr width="100%">
+                <th width="30%"></th>
+                <th width="40%">
+                    <div class="Spacer10"></div>
+                    <div class="Headline3">Band 1</div>
+                    <input type="text" class="StandardInput1" width="100%" id="MailTxtBox"/>
+                    <div class="Spacer10"></div>
+                    <div class="Spacer10"></div>
+                </th>
+                <th width="30%"></th>
+            </tr>
+        </table>
+
+        <div class="Spacer10"></div>
+        <div class="Spacer10"></div>
+    </div>
+    <div id="FootBar"></div>
+  </body>
+
+</html>
+
+<script
+
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+
+</script>
+
+<script>
+
+    $(function(){
+        $("#HeadBar").load("FixedPages/HeadBar.html"); 
+        $("#FootBar").load("FixedPages/FootBar.html"); 
+    });
+
+</script> 
+
+<script>
+let Fehlversuche = parseInt(localStorage.getItem("Fehlversuche") || "0");
+let Sperrzeit = parseInt(localStorage.getItem("Sperrzeit") || "0");
+
+// Bei Seitenstart prüfen, ob Login gesperrt ist
+if (Date.now() < Sperrzeit) {
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("resultBox").innerText = "Login vorübergehend gesperrt.";
+  });
+}
+
+async function LoginClick() {
+  if (Date.now() < Sperrzeit) {
+    document.getElementById("resultBox").innerText = "Login gesperrt! Bitte 5 Minuten warten.";
+    return;
+  }
+
+  const email = document.getElementById("MailTxtBox").value;
+  const password = document.getElementById("PasswordTxtBox").value;
+
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const passwordHash = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+
+  const url = `https://script.google.com/macros/s/AKfycbxHq4HQRXrsJJ_8O-uFcwNzZI3KC7B-4HejZxIj1Ppqq4dVSkzAhbPRZLtpEosVL0B_0Q/exec?email=${encodeURIComponent(email)}&password=${passwordHash}`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Fehler beim Abrufen der Login-Antwort");
+
+    const responseText = await response.text();
+    const parts = responseText.trim().split(";");
+
+    if (parts[0] === "success") {
+      Fehlversuche = 0;
+      localStorage.setItem("Fehlversuche", "0");
+      localStorage.setItem("Sperrzeit", "0");
+      const folderIds = parts.slice(1);
+      document.getElementById("resultBox").innerHTML =
+        "<p>Login erfolgreich! Berechtigte Ordner:</p><ul>" +
+        folderIds.map(id => `<li>${id}</li>`).join("") + "</ul>";
+
+        document.getElementById("LoginFrame").style.display = "none";
+        document.getElementById("DataFrame").style.display = "block";
+    } else {
+      Fehlversuche++;
+      localStorage.setItem("Fehlversuche", Fehlversuche.toString());
+
+      if (Fehlversuche >= 5) {
+        Sperrzeit = Date.now() + 5 * 60 * 1000; // 5 Minuten in ms
+        localStorage.setItem("Sperrzeit", Sperrzeit.toString());
+        document.getElementById("resultBox").innerText = "Zu viele Fehlversuche! Login für 5 Minuten gesperrt.";
+      } else {
+        document.getElementById("resultBox").innerText = "Login fehlgeschlagen! Fehlversuche: " + Fehlversuche;
+      }
+    }
+  } catch (err) {
+    console.error("Fehler beim Login:", err);
+    document.getElementById("resultBox").innerText = "Verbindungsfehler oder falsche URL.";
+  }
+}
+</script>
+

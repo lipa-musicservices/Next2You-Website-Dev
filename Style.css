@@ -121,6 +121,15 @@ body {
   line-height: 25pt;
 }
 
+.StandardInput1{
+  background-color: white;
+  border: solid 1px white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15pt;
+  text-align: justify;
+  width: 80%;
+}
+
 .BandText1{
   color: white;
   background-color: rgb(4, 37, 37);
