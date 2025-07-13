@@ -14,7 +14,7 @@
     <div class="Headline2">Dokumente</div>
 
     <div class="PageBackground" width="100%">
-        <table width="100%" id="LoginFrame">
+        <table width="100%" id="LoginFrame" border="1px">
             <tr width="100%">
                 <th width="30%"></th>
                 <th width="40%">
@@ -26,8 +26,20 @@
                     <div class="Headline3">Passwort</div>
                     <input type="password" class="StandardInput1" width="100%" id="PasswordTxtBox"/>
                     <div class="Spacer10"></div>
-                    <div id="resultBox"></div>
-                    <button onclick="LoginClick()">Log in</button>
+                    <div id="resultBox" class="ResultText"></div>
+                    <div class="Spacer10"></div>
+
+                    <table width="100%" border="1px">
+                      <tr>
+                        <th width="50%">
+                          <button onclick="LoginClick()">Log in</button>
+                        </th>
+                        <th width="50%">
+                          <a href="" class="StandardText1" >Passwort vergessen?</a>
+                        </th>
+                      </tr>
+                    </table>
+                    
                 </th>
                 <th width="30%"></th>
             </tr>
@@ -38,8 +50,7 @@
                 <th width="30%"></th>
                 <th width="40%">
                     <div class="Spacer10"></div>
-                    <div class="Headline3">Band 1</div>
-                    <input type="text" class="StandardInput1" width="100%" id="MailTxtBox"/>
+                    <div class="Headline3" id="Band1">f</div>
                     <div class="Spacer10"></div>
                     <div class="Spacer10"></div>
                 </th>
@@ -111,19 +122,40 @@ async function LoginClick() {
       Fehlversuche = 0;
       localStorage.setItem("Fehlversuche", "0");
       localStorage.setItem("Sperrzeit", "0");
-      const folderIds = parts.slice(1);
-      document.getElementById("resultBox").innerHTML =
-        "<p>Login erfolgreich! Berechtigte Ordner:</p><ul>" +
-        folderIds.map(id => `<li>${id}</li>`).join("") + "</ul>";
 
-        document.getElementById("LoginFrame").style.display = "none";
-        document.getElementById("DataFrame").style.display = "block";
+      const folderIds = parts.slice(1);
+      document.getElementById("resultBox").innerHTML = "<p>Login erfolgreich! Berechtigte Ordner:</p><ul>";
+
+      for (const folderId of folderIds) {
+        const folderDataResponse = await fetchFolder("https://script.google.com/macros/s/AKfycbzhYmkKbD2JIRI54FextpKGgPDg61JQtF7DvbWEeoTaP_QjgIl7ziv3ZaTpPXNjvm0dKQ/exec?folderId=" + folderId);
+        if (!folderDataResponse) continue;
+
+        const folderData = await folderDataResponse.json();
+        if (!Array.isArray(folderData) || folderData.length < 2) continue;
+
+        const ordnerId = folderData[0];
+        const ordnerName = folderData[1];
+
+        document.getElementById("Band1").innerHTML = ordnerName; // Beispielanzeige
+
+        // Optional: Ausgabe der Dateien
+        for (let i = 2; i < folderData.length; i += 2) {
+          const dateiId = folderData[i];
+          const dateiName = folderData[i + 1];
+          console.log("Datei:", dateiName, "ID:", dateiId);
+          // z. B. als Liste anhängen:
+          document.getElementById("resultBox").innerHTML += `<li>${dateiName} (${dateiId})</li>`;
+        }
+      }
+
+      document.getElementById("LoginFrame").style.display = "none";
+      document.getElementById("DataFrame").style.display = "block";
     } else {
       Fehlversuche++;
       localStorage.setItem("Fehlversuche", Fehlversuche.toString());
 
       if (Fehlversuche >= 5) {
-        Sperrzeit = Date.now() + 5 * 60 * 1000; // 5 Minuten in ms
+        Sperrzeit = Date.now() + 5 * 60 * 1000;
         localStorage.setItem("Sperrzeit", Sperrzeit.toString());
         document.getElementById("resultBox").innerText = "Zu viele Fehlversuche! Login für 5 Minuten gesperrt.";
       } else {
@@ -135,5 +167,15 @@ async function LoginClick() {
     document.getElementById("resultBox").innerText = "Verbindungsfehler oder falsche URL.";
   }
 }
+
+async function fetchFolder(folderURL) {
+  try {
+    return await fetch(folderURL);
+  } catch (err) {
+    console.error("Fehler beim Abrufen für Folder URL:", folderURL, err);
+    return null;
+  }
+}
+
 </script>
 
