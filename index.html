@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LiPa Music Services</title>
+    <title>Next2You - Eventband</title>
     <link rel="stylesheet" href="Style.css"></link>
 
     <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
@@ -14,6 +14,24 @@
     <div>
         <video width="100%" class="BackgroundVideoMain" src="Resources/Videos/LiPa Website Video Main.mp4" loop="true" autoplay="true" muted="true" preload="auto"></video>
     </div>
+    <div class="Spacer10"></div>
+
+    <div class="Headline2">Next Events:</div>
+
+    <div class="Spacer10"></div>
+    <table width="100%" class="EventCalendar">
+        <th width="10%" class="PageSide"></th>
+        <th width="80%" class="PageSide">
+            <table class="EventCalendar" id="EventCalendar" width="100%">
+                <tbody style="padding: 0; width: 100%;">
+
+                </tbody>
+            </table>
+        </th>
+        <th width="10%" class="PageSide"></th>
+    </table>
+    <div class="Spacer10"></div>
+    <div class="Spacer10"></div>
     <div id="FootBar"></div>
   </body>
 </html>
@@ -50,3 +68,126 @@
     });
 
 </script> 
+
+<script>
+async function ladeEvents() {
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbxKThp9AyT2HAD98I8O1Qq2u5B_-wbaqCBlzxuGJOX-Cqt7fSbwx9-ol1mSShovScXN4g/exec";
+
+    try {
+        const response = await fetch(scriptUrl);
+        if (!response.ok) throw new Error("HTTP Fehler " + response.status);
+
+        const rows = await response.json();
+        const table = document.getElementById("EventCalendar");
+
+        // Falls noch kein tbody existiert → erstellen
+        let tbody = table.querySelector("tbody");
+        if (!tbody) {
+            tbody = document.createElement("tbody");
+            table.appendChild(tbody);
+        }
+        tbody.innerHTML = ""; // Alte Einträge löschen
+
+        // -------------------
+        // 1. Datum parsen und nur zukünftige behalten
+        // -------------------
+        const jetzt = new Date();
+        const events = rows
+            .map(row => {
+                const dateval = new Date(row[0]); // Spalte 0 = Datum/Uhrzeit
+                return {
+                    datum: dateval,
+                    titel: row[1],
+                    ort: row[2],
+                    tickets: row[3],
+                    preis: row[4],
+                    ausverkauft: row[5]
+                };
+            })
+            .filter(ev => ev.datum >= jetzt) // Nur Events in der Zukunft
+            .sort((a, b) => a.datum - b.datum); // Nach Datum sortieren
+
+        // -------------------
+        // 2. Events ins HTML einfügen
+        // -------------------
+        events.forEach(ev => {
+            const tr = document.createElement("tr");
+
+// Datum & Uhrzeit (deutsche Zeit)
+const tdDatum = document.createElement("td");
+
+const datumObj = new Date(ev.datum);
+
+const datumStr = datumObj.toLocaleDateString("de-DE", {
+    timeZone: "Europe/Berlin",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+});
+
+const zeitStr = datumObj.toLocaleTimeString("de-DE", {
+    timeZone: "Europe/Berlin",
+    hour: "2-digit",
+    minute: "2-digit"
+});
+
+tdDatum.textContent = `${datumStr} - ${zeitStr}`;
+
+tr.appendChild(tdDatum);
+            // Titel
+            const tdTitel = document.createElement("td");
+            tdTitel.textContent = ev.titel;
+            tr.appendChild(tdTitel);
+
+            // Ort
+            const tdOrt = document.createElement("td");
+            tdOrt.textContent = ev.ort;
+            tr.appendChild(tdOrt);
+
+            // Tickets (Link)
+const tdTickets = document.createElement("td");
+if (ev.tickets) {
+    const a = document.createElement("a");
+    a.href = ev.tickets;
+    a.target = "_blank";
+    a.style.textDecoration = "none"; // Unterstreichung entfernen
+
+    const tdTicketDiv = document.createElement("div");
+    tdTicketDiv.style.margin = "10px";
+    tdTicketDiv.style.backgroundColor = "lightgray";
+    tdTicketDiv.style.color = "black";
+    tdTicketDiv.style.border = "2px solid black";
+    tdTicketDiv.style.boxShadow = "black";
+    tdTicketDiv.style.textDecoration = "none"; // Falls nötig
+    tdTicketDiv.textContent = "Tickets";
+
+    a.appendChild(tdTicketDiv);
+    tdTickets.appendChild(a);
+}
+
+tr.appendChild(tdTickets);
+
+
+            // Preis
+            const tdPreis = document.createElement("td");
+            tdPreis.textContent = ev.preis + " €";
+
+            tr.appendChild(tdPreis);
+
+            for (let cell of tr.cells) {
+                cell.style.borderTop = "1pt solid white";
+                
+                cell.style.lineHeight = "50pt";
+            }
+
+            tbody.appendChild(tr);
+        });
+
+    } catch (err) {
+        console.error("Fehler beim Laden der Events:", err);
+    }
+}
+
+ladeEvents();
+
+</script>

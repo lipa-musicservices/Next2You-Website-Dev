@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LiPa - About</title>
+    <title>Next2You - About</title>
     <link rel="stylesheet" href="Style.css"></link>
   </head>
 
@@ -11,49 +11,71 @@
     <div id="HeadBar"></div>
     <div class="Spacer10"></div>
     <div class="Headline1">ÜBER UNS</div>
-    <div class="Headline2">Wir sind LiPa Music Services!</div>
     <div class="Spacer10"></div>
 
     <div class="PageBackground" width="100%">
       <table>
         <tr>
           <th class="PageSides"></th>
-          <th width=auto height="300pt"><div id="AboutGeneralText" class="StandardText1"></div></th>
+          <th width="auto" height="300pt"><div id="AboutGeneralText" class="StandardText1"></div></th>
           <th class="PageSides"></th>
         </tr>
       </table>
       <div class="Spacer10"></div>
-      <div class="Headline2">Das Team:</div>
-      <div class="AboutTableDiv" width="100%">
-        <table width="100%">
-          <tr width="100%">
-            <td width="auto" class="PageSides"></td>
-            <td width="10%"><div class="AboutHeadline3-1">Paul Dupont</div></td>
-            <td width="10%"><div class="AboutHeadline3-2">Lisa Römer</div></td>
-            <td width="auto" class="PageSides"></td>
-          </tr>
-          <tr width="100%">
-            <td width="10%" class="PageSides"></td>
-            <td width="40%" class="AboutTD">
-              <div class="PersonalPictureContainer1">
-                <img id="PersonalPicture1" class="PersonalPicture" src="Resources/PersonalPictures/Folie1.PNG">
-                <div width="100%" class="TextOverlay">
-                  <div class="PersonalPictureOverlayText" id="PersonalPictures1"></div>
-                </div>
-              </div>
-            </td>
-            <td width="40%" class="AboutTD">
-              <div class="PersonalPictureContainer2">
-                <img id="PersonalPicture2" class="PersonalPicture" src="Resources/PersonalPictures/Folie2.PNG">
-                <div width="100%" class="TextOverlay">
-                  <div class="PersonalPictureOverlayText" id="PersonalPictures2"></div>
-                </div>
-              </div>
-            </td>
-            <td width="10%" class="PageSides"></td>
-          </tr>
-        </table>
-      </div>
+      <div class="Headline2">Die Kern-Musiker:</div>
+          <div class="Spacer10"></div>
+<div class="AboutTableDiv" width="100%">
+  <table width="100%">
+    <tr width="100%">
+      <th class="PageSides" width="10%"></th>
+
+      <th class="BandMember" width="26.667%">
+        <div class="band-member-container">
+          <img class="BandMemberImg" src="Resources/BandPictures/Folie1.PNG" alt="Robin Pföhler" width="100%"/>
+          <div class="overlay">
+            <div class="member-name">Robin Pföhler</div>
+            <div class="member-text">Schlagzeug / Gesang</div>
+            <div class="social-links">
+              <a href="https://instagram.com/" target="_blank"><img class="BandMemberLogo" src="Resources/External/Instagram_Glyph_White.png"/></a>
+              <a href="https://facebook.com/" target="_blank"><img class="BandMemberLogo" src="Resources/External/Facebook_Logo_Primary.png"/></a>
+            </div>
+          </div>
+        </div>
+      </th>
+
+      <th class="BandMember" width="26.666%">
+        <div class="band-member-container">
+          <img class="BandMemberImg" src="Resources/BandPictures/Folie2.PNG" alt="Matthew Fischer" width="100%"/>
+          <div class="overlay">
+            <div class="member-name">Matthew Fischer</div>
+            <div class="member-text">Gitarre / Gesang</div>
+            <div class="social-links">
+              <a href="https://instagram.com/" target="_blank"><img class="BandMemberLogo" src="Resources/External/Instagram_Glyph_White.png"/></a>
+              <a href="https://facebook.com/" target="_blank"><img class="BandMemberLogo" src="Resources/External/Facebook_Logo_Primary.png"/></a>
+            </div>
+          </div>
+        </div>
+      </th>
+
+      <th class="BandMember" width="26.667%">
+        <div class="band-member-container">
+          <img class="BandMemberImg" src="Resources/BandPictures/Folie3.PNG" alt="Paul Dupont" width="100%"/>
+          <div class="overlay">
+            <div class="member-name">Paul Dupont</div>
+            <div class="member-text">Bass / Keys</div>
+            <div class="social-links">
+              <a href="https://instagram.com/" target="_blank"><img class="BandMemberLogo" src="Resources/External/Instagram_Glyph_White.png"/></a>
+              <a href="https://facebook.com/" target="_blank"><img class="BandMemberLogo" src="Resources/External/Facebook_Logo_Primary.png"/></a>
+            </div>
+          </div>
+        </div>
+      </th>
+
+      <th class="PageSides" width="10%"></th>
+    </tr>
+  </table>
+</div>
+
 
       <div class="Spacer10"></div>
       <div class="Spacer10"></div>
@@ -87,104 +109,6 @@
 </script> 
 
   <script>
-    document.querySelector('.PersonalPictureContainer1').addEventListener('mouseover', function () {
-    const textElement = document.querySelector('.AboutHeadline3-2');
-    const ImgElement = document.getElementById('PersonalPicture2');
-
-    let opacity = 1; // Startwert der Opazität
-    const duration = 100; // Dauer in Millisekunden
-    const interval = 50; // Intervall für die Schritte in Millisekunden
-    const decrement = interval / duration; // Schrittweise Verringerung
-
-    const fade = setInterval(() => {
-        opacity -= decrement; // Reduzieren der Opazität
-        if (opacity <= 0) {
-            clearInterval(fade); // Stoppen, wenn Opazität 0 erreicht
-            opacity = 0; // Sicherheitshalber auf 0 setzen
-        }
-        textElement.style.opacity = opacity; // Anwenden der neuen Opazität
-        ImgElement.style.opacity = opacity;
-    }, interval);
-});
-
-document.querySelector('.PersonalPictureContainer1').addEventListener('mouseout', function () {
-    const textElement = document.querySelector('.AboutHeadline3-2');
-    const ImgElement = document.getElementById('PersonalPicture2');
-
-    textElement.textContent = "Lisa Römer"; // Text zurücksetzen
-
-    let opacity = 0; // Startwert der Opazität
-    const duration = 100; // Dauer in Millisekunden
-    const interval = 50; // Intervall für die Schritte in Millisekunden
-    const decrement = interval / duration; // Schrittweise Verringerung
-
-    const fade = setInterval(() => {
-        opacity += decrement; // Reduzieren der Opazität
-        if (opacity >= 1) {
-            clearInterval(fade); // Stoppen, wenn Opazität 0 erreicht
-            opacity = 1; // Sicherheitshalber auf 0 setzen
-        }
-        textElement.style.opacity = opacity; // Anwenden der neuen Opazität
-        ImgElement.style.opacity = opacity;
-    }, interval);
-});
-
-document.querySelector('.PersonalPictureContainer2').addEventListener('mouseover', function () {
-    const textElement = document.querySelector('.AboutHeadline3-1');
-    const ImgElement = document.getElementById('PersonalPicture1');
-
-    let opacity = 1; // Startwert der Opazität
-    const duration = 200; // Dauer in Millisekunden
-    const interval = 50; // Intervall für die Schritte in Millisekunden
-    const decrement = interval / duration; // Schrittweise Verringerung
-
-    const fade = setInterval(() => {
-        opacity -= decrement; // Reduzieren der Opazität
-        if (opacity <= 0) {
-            clearInterval(fade); // Stoppen, wenn Opazität 0 erreicht
-            opacity = 0; // Sicherheitshalber auf 0 setzen
-        }
-        textElement.style.opacity = opacity; // Anwenden der neuen Opazität
-        ImgElement.style.opacity = opacity;
-    }, interval);
-});
-
-document.querySelector('.PersonalPictureContainer2').addEventListener('mouseout', function () {
-    const textElement = document.querySelector('.AboutHeadline3-1');
-    const ImgElement = document.getElementById('PersonalPicture1');
-    textElement.textContent = "Paul Dupont"; // Text zurücksetzen
-
-    let opacity = 0; // Startwert der Opazität
-    const duration = 200; // Dauer in Millisekunden
-    const interval = 50; // Intervall für die Schritte in Millisekunden
-    const decrement = interval / duration; // Schrittweise Verringerung
-
-    const fade = setInterval(() => {
-        opacity += decrement; // Reduzieren der Opazität
-        if (opacity >= 1) {
-            clearInterval(fade); // Stoppen, wenn Opazität 0 erreicht
-            opacity = 1; // Sicherheitshalber auf 0 setzen
-        }
-        textElement.style.opacity = opacity; // Anwenden der neuen Opazität
-        ImgElement.style.opacity = opacity;
-    }, interval);
-});
-
-document.querySelector('.PersonalPictureContainer2').addEventListener('mouseover', function () {
-    document.querySelector('.PersonalPictureContainer1 .TextOverlay').style.opacity = '1'; // Overlay von Container 1 anzeigen
-  });
-
-  document.querySelector('.PersonalPictureContainer2').addEventListener('mouseout', function () {
-    document.querySelector('.PersonalPictureContainer1 .TextOverlay').style.opacity = '0'; // Overlay von Container 1 ausblenden
-  });
-
-  document.querySelector('.PersonalPictureContainer1').addEventListener('mouseover', function () {
-    document.querySelector('.PersonalPictureContainer2 .TextOverlay').style.opacity = '1'; // Overlay von Container 1 anzeigen
-  });
-
-  document.querySelector('.PersonalPictureContainer1').addEventListener('mouseout', function () {
-    document.querySelector('.PersonalPictureContainer2 .TextOverlay').style.opacity = '0'; // Overlay von Container 1 ausblenden
-  });
 
     var txtFile1 = new XMLHttpRequest();
     var allText1 = "";
